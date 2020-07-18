@@ -3,13 +3,13 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import { DummyUser } from '../../../assets'
 import { fonts, colors } from '../../../utils'
 
-const HomeProfile = () => {
+const HomeProfile = ({name, profession}) => {
     return (
         <View style={styles.container}>
             <Image source={DummyUser} style={styles.avatar} />
             <View>
-                <Text style={styles.name}>Khansa Hanum</Text>
-                <Text style={styles.profession}>Product Designer</Text>
+                <Text style={styles.name}>{name}</Text>
+                <Text style={styles.profession}>{profession}</Text>
             </View>
         </View>
     )

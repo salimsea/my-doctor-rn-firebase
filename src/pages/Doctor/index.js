@@ -12,7 +12,7 @@ const Doctor = () => {
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <View style={styles.wrapperSection}>
                         <Gap height={30} />
-                        <HomeProfile />
+                        <HomeProfile name="Salim Segaf" profession="Keperawatan" />
                         <Text style={styles.welcome}>Mau Konsultasi dengan siapa hari ini?</Text>
                     </View>
                     <View style={styles.wrapperScroll}>
