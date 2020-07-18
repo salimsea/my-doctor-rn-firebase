@@ -3,12 +3,12 @@ import { StyleSheet, Text, View } from 'react-native'
 import { ILCatUmum } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 
-const DoctorCategory = () => {
+const DoctorCategory = ({label, category}) => {
     return (
         <View style={styles.container}>
             <ILCatUmum style={styles.illustration} />
-            <Text style={styles.label}>Saya butuh</Text>
-            <Text style={styles.category}>dokter umum</Text>
+            <Text style={styles.label}>{label}</Text>
+            <Text style={styles.category}>{category}</Text>
         </View>
     )
 }

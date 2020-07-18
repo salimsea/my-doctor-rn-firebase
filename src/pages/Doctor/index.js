@@ -2,6 +2,8 @@ import React from 'react'
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import { HomeProfile, DoctorCategory, RatedDoctor, NewsItem, Gap } from '../../components'
 import { fonts, colors } from '../../utils'
+import { DummyDoctor1, DummyDoctor2, DummyDoctor3 } from '../../assets'
+import { DummyNews1, DummyNews2, DummyNews3 } from '../../assets'
 
 const Doctor = () => {
     return (
@@ -17,24 +19,24 @@ const Doctor = () => {
                         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                             <View style={styles.category}>
                                 <Gap width={32} />
-                                <DoctorCategory />
-                                <DoctorCategory />
-                                <DoctorCategory />
-                                <DoctorCategory />
+                                <DoctorCategory label="Sakit Gigi" category="Dokter Gigi" />
+                                <DoctorCategory label="Sakit Kepala" category="Dokter Gizi" />
+                                <DoctorCategory label="Sakit Perut" category="Dokter Gizi" />
+                                <DoctorCategory label="Sakit Jiwa" category="Dokter Jiwa" />
                                 <Gap width={22} />
                             </View>
                         </ScrollView>
                     </View>
                     <View style={styles.wrapperSection}>
                         <Text style={styles.sectionLabel}>Top Rated Doctors</Text>
-                        <RatedDoctor />
-                        <RatedDoctor />
-                        <RatedDoctor />
+                        <RatedDoctor profile={DummyDoctor1} name="Salim Segaf" position="Dokter Gigi" />
+                        <RatedDoctor profile={DummyDoctor2} name="Ahmad Yasin" position="Dokter Gizi" />
+                        <RatedDoctor profile={DummyDoctor3} name="Hanum Hanifa" position="Dokter Jiwa" />
                         <Text style={styles.sectionLabel}>Good News</Text>
                     </View>
-                    <NewsItem />
-                    <NewsItem />
-                    <NewsItem />
+                    <NewsItem desc="Kenapa harus takut dengan corona?" date="Today" image={DummyNews1} />
+                    <NewsItem desc="Harus kah setiap hari memakan buah-buahan?" date="Today" image={DummyNews2} />
+                    <NewsItem desc="Benarkan buah jeruk itu bagus?" date="Today" image={DummyNews3} />
                     <Gap height={30} />
                 </ScrollView>
             </View>
