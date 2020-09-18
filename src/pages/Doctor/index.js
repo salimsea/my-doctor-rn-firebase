@@ -4,8 +4,8 @@ import { HomeProfile, DoctorCategory, RatedDoctor, NewsItem, Gap } from '../../c
 import { fonts, colors } from '../../utils'
 import { DummyDoctor1, DummyDoctor2, DummyDoctor3 } from '../../assets'
 import { DummyNews1, DummyNews2, DummyNews3 } from '../../assets'
-
-const Doctor = () => {
+import { JSONCategoryDoctor, JSONQuran } from '../../assets'
+const Doctor = ({ navigation }) => {
     return (
         <View style={styles.page}>
             <View style={styles.content}>
@@ -19,10 +19,11 @@ const Doctor = () => {
                         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                             <View style={styles.category}>
                                 <Gap width={32} />
-                                <DoctorCategory label="Sakit Gigi" category="Dokter Gigi" />
-                                <DoctorCategory label="Sakit Kepala" category="Dokter Gizi" />
-                                <DoctorCategory label="Sakit Perut" category="Dokter Gizi" />
-                                <DoctorCategory label="Sakit Jiwa" category="Dokter Jiwa" />
+                                {
+                                    JSONCategoryDoctor.data.map(item => {
+                                        return <DoctorCategory key={item.id} category={item.category} onPress={() => navigation.navigate('ChooseDoctor')} />
+                                    })
+                                }
                                 <Gap width={22} />
                             </View>
                         </ScrollView>
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
         marginHorizontal: -16,
     },
     sectionLabel: {
-        fontSize: 16, 
+        fontSize: 16,
         fontFamily: fonts.primary[600],
         color: colors.text.primary,
         marginTop: 30,

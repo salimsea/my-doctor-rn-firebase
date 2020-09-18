@@ -3,10 +3,10 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import { DummyDoctor1, IconStar } from '../../../assets'
 import { fonts, colors } from '../../../utils'
 
-const RatedDoctor = ({profile, name, position}) => {
+const RatedDoctor = ({ profile, name, position }) => {
     return (
         <View style={styles.container}>
-            <Image source={profile} style={styles.avatar}/>
+            <Image source={profile} style={styles.avatar} />
             <View style={styles.profile}>
                 <Text style={styles.name}>{name}</Text>
                 <Text>{position}</Text>
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     avatar: {
         width: 50,
         height: 50,
-        borderRadius: 50/2,
+        borderRadius: 50 / 2,
         marginRight: 12,
     },
     rate: {
